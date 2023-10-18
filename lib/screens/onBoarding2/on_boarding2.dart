@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utl/assets.dart';
 
-import '../onBoarding2/widgets/custom_button.dart';
-import '../onBoarding2/widgets/on_boarding_subtitle.dart';
-import '../onBoarding2/widgets/on_boarding_title.dart';
+import '../../componants/custom_button.dart';
+import '../../componants/on_boarding_subtitle.dart';
+import '../../componants/on_boarding_title.dart';
 
-class OnBoarding3 extends StatelessWidget {
-  const OnBoarding3({super.key});
+class OnBoarding2 extends StatelessWidget {
+  const OnBoarding2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,9 @@ class OnBoarding3 extends StatelessWidget {
           ),
           CustomButton(
             text: "Next",
-            onTap: () {},
+            onTap: () {
+              Navigator.pushReplacementNamed(context, "login");
+            },
           )
         ],
       ),

@@ -1,28 +1,19 @@
 import 'package:flutter/material.dart';
-import '../../utl/assets.dart';
-import '../onBoarding2/on_boarding2.dart';
-import 'widgets/linear_gradient_text.dart';
+import 'package:food_delivery/utl/assets.dart';
 
-class OnBoarding1 extends StatelessWidget {
-  const OnBoarding1({super.key});
+import '../../componants/linear_gradient_text.dart';
+
+
+
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    // Future.delayed(
-    //   const Duration(seconds: 3),
-    //   () {
-    //     Navigator.of(context).pushReplacement(MaterialPageRoute(
-    //       builder: (context) => const OnBoarding2(),
-    //     ));
-    //   },
-    // );
     return Scaffold(
-      body: GestureDetector(
-        onTap: () {
-          Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (context) => const OnBoarding2(),
-          ));
-        },
-        child: Stack(children: [
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [
           Image.asset(
             Assets.patternPic,
             fit: BoxFit.fill,
@@ -43,11 +34,26 @@ class OnBoarding1 extends StatelessWidget {
                     letterSpacing: 1,
                     fontWeight: FontWeight.w400,
                   ),
-                )
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                const Text(
+                  'Login To Your Account',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Color(0xFF09041B),
+                    fontSize: 20,
+                    fontFamily: 'BentonSans Bold',
+                    fontWeight: FontWeight.w400,
+                    height: 0.07,
+                  ),
+                ),
+                Form(child: TextFormField())
               ],
             ),
           ),
-        ]),
+        ],
       ),
     );
   }

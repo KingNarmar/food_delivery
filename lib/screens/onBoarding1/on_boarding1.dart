@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/pages/onBoarding2/widgets/custom_button.dart';
+import 'package:food_delivery/componants/custom_button.dart';
 import 'package:food_delivery/utl/assets.dart';
-import '../onBoarding3/on_boarding3.dart';
-import 'widgets/on_boarding_subtitle.dart';
-import 'widgets/on_boarding_title.dart';
 
-class OnBoarding2 extends StatelessWidget {
-  const OnBoarding2({super.key});
+import '../../componants/on_boarding_subtitle.dart';
+import '../../componants/on_boarding_title.dart';
+
+class OnBoarding1 extends StatelessWidget {
+  const OnBoarding1({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,9 +31,7 @@ class OnBoarding2 extends StatelessWidget {
           CustomButton(
             text: "Next",
             onTap: () {
-              Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (context) => const OnBoarding3(),
-              ));
+              Navigator.pushReplacementNamed(context, "onBoarding2");
             },
           )
         ],

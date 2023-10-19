@@ -26,7 +26,8 @@ class SplashScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(Assets.logoPic),
-              const LinearGradientText(),
+              const LinearGradientText(
+                  text: "FoodNinja", fontFamily: "Viga", fontSize: 40),
               const Text(
                 "Deliever Favorite Food",
                 style: TextStyle(

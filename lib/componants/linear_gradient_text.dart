@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 class LinearGradientText extends StatelessWidget {
   const LinearGradientText({
     super.key,
+    required this.text,
+    required this.fontSize,
+    required this.fontFamily,
   });
-
+  final String text;
+  final double fontSize;
+  final String fontFamily;
   @override
   Widget build(BuildContext context) {
     return ShaderMask(
@@ -15,12 +20,12 @@ class LinearGradientText extends StatelessWidget {
                 end: Alignment.centerRight)
             .createShader(bounds);
       },
-      child: const Text(
-        "FoodNinja",
+      child: Text(
+        text,
         style: TextStyle(
-            fontFamily: "Viga",
-            fontSize: 40,
-            color: Color(0xff53E88B),
+            fontFamily: fontFamily,
+            fontSize: fontSize,
+            color: const Color(0xff53E88B),
             letterSpacing: 0.5,
             fontWeight: FontWeight.w400),
       ),

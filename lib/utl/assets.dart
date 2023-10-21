@@ -18,6 +18,7 @@ abstract class Assets {
   static const String cameraPic = "assets/images/cameraPic.png";
   static const String testPic = "assets/images/upload preview pic.png";
   static const String closeIcon = "assets/images/Close Icon.png";
+  static const String locationIcon = "assets/images/placeholder Icon.png";
   static const String vigaFont = "Viga";
   static const String interFont = "Inter";
   static const String bentonSansBoldFont = "BentonSans Bold";

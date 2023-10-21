@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         "uploadPreview": (context) => const UploadPreviewScreen(),
         "setLocation": (context) => const SetLocationScreen()
       },
-      initialRoute: "payment",
+      initialRoute: "setLocation",
     );
   }
 }

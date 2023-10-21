@@ -52,7 +52,6 @@ class CustomTextFormField extends StatelessWidget {
     this.hintText,
     this.prefix,
     this.suffixIcon,
-    this.child,
     this.validator,
     this.onChanged,
     this.controller,
@@ -61,7 +60,7 @@ class CustomTextFormField extends StatelessWidget {
   final String? hintText;
   final Widget? prefix;
   final Widget? suffixIcon;
-  final Widget? child;
+
   final TextEditingController? controller;
   final String? Function(String?)? validator;
   final void Function(String)? onChanged;

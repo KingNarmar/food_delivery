@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         "onBoarding1": (context) => const OnBoarding1(),
         "onBoarding2": (context) => const OnBoarding2(),
         "login": (context) => LoginScreen(),
-        "signUp": (context) => const SignUpScreen(),
+        "signUp": (context) => SignUpScreen(),
         "signUpProcess": (context) => const SignUpProcessScreen(),
         "payment": (context) => const PaymentMethodScreen()
       },

@@ -5,6 +5,7 @@ import 'package:food_delivery/screens/payment_method/payment_method_screen.dart'
 import 'package:food_delivery/screens/set_location_screen/set_location_screen.dart';
 import 'package:food_delivery/screens/sign_up_process_screen/sign_up_process_screen.dart';
 import 'package:food_delivery/screens/sign_up_screen/sign_up_screen.dart';
+import 'package:food_delivery/screens/singup_success/singup_success_screen.dart';
 import 'package:food_delivery/screens/upload_photo_screen/upload_photo_screen.dart';
 import 'package:food_delivery/screens/upload_preview_screen/upload_preview_screen.dart';
 
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
         "payment": (context) => const PaymentMethodScreen(),
         "uploadPhoto": (context) => const UploadPhotoScreen(),
         "uploadPreview": (context) => const UploadPreviewScreen(),
-        "setLocation": (context) => const SetLocationScreen()
+        "setLocation": (context) => const SetLocationScreen(),
+        "singUpSuccess": (context) => const SingUpSuccessScreen()
       },
       initialRoute: "setLocation",
     );

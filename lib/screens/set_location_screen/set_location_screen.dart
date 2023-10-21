@@ -135,7 +135,13 @@ class SetLocationScreen extends StatelessWidget {
                     const SizedBox(
                       height: 328,
                     ),
-                    Center(child: CustomButton(text: "Next", onTap: () {}))
+                    Center(
+                        child: CustomButton(
+                            text: "Next",
+                            onTap: () {
+                              Navigator.pushReplacementNamed(
+                                  context, "singUpSuccess");
+                            }))
                   ],
                 ),
               ),

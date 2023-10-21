@@ -6,6 +6,7 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
   });
   final String hintText;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,15 +26,17 @@ class CustomTextFormField extends StatelessWidget {
           )
         ],
       ),
-      child: TextFormField(
-        decoration: InputDecoration(
-            border: InputBorder.none,
-            hintText: hintText,
-            hintStyle: TextStyle(
-              color: const Color(0xFF3B3B3B).withOpacity(0.3),
-            ),
-            contentPadding:
-                const EdgeInsets.symmetric(horizontal: 28, vertical: 22)),
+      child: Form(
+        child: TextFormField(
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: hintText,
+              hintStyle: TextStyle(
+                color: const Color(0xFF3B3B3B).withOpacity(0.3),
+              ),
+              contentPadding:
+                  const EdgeInsets.symmetric(horizontal: 28, vertical: 22)),
+        ),
       ),
     );
   }

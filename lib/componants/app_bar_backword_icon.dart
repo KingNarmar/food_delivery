@@ -5,14 +5,16 @@ class AppBarBackWordIcon extends StatelessWidget {
   const AppBarBackWordIcon({
     super.key,
     this.onTap,
+    required this.padding,
   });
   final void Function()? onTap;
+  final EdgeInsetsGeometry padding;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.only(left: 11),
+        padding: padding,
         child: Image.asset(Assets.backWordIcon),
       ),
     );

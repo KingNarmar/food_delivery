@@ -26,6 +26,7 @@ class SignUpProcessScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 AppBarBackWordIcon(
+                  padding: const EdgeInsets.only(left: 11),
                   onTap: () {
                     Navigator.pop(context);
                   },

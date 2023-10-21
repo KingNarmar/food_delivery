@@ -6,6 +6,7 @@ class CustomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        width: double.infinity,
         height: 57,
         decoration: ShapeDecoration(
           color: Colors.white,

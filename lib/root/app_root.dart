@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         "onBoarding2": (context) => const OnBoarding2(),
         "login": (context) => LoginScreen(),
         "signUp": (context) => SignUpScreen(),
-        "signUpProcess": (context) => const SignUpProcessScreen(),
+        "signUpProcess": (context) => SignUpProcessScreen(),
         "payment": (context) => const PaymentMethodScreen()
       },
       initialRoute: "splash",

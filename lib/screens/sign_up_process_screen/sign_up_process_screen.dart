@@ -82,7 +82,11 @@ class SignUpProcessScreen extends StatelessWidget {
                     const SizedBox(
                       height: 220,
                     ),
-                    CustomButton(text: "Next", onTap: () {})
+                    CustomButton(
+                        text: "Next",
+                        onTap: () {
+                          Navigator.pushNamed(context, "payment");
+                        })
                   ],
                 ),
               ),

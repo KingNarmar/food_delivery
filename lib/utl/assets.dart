@@ -11,6 +11,9 @@ abstract class Assets {
   static const String showPasswordIcon = "assets/images/ShowPasswordIcon.png";
   static const String backWordIcon = "assets/images/backwordIcon.png";
   static const String chickIcon = "assets/images/checkIcon.png";
+  static const String payoneerPic = "assets/images/Payoneer pic.png";
+  static const String payPalPic = "assets/images/paypal pic.png";
+  static const String visaPic = "assets/images/visa pic.png";
   static const String vigaFont = "Viga";
   static const String interFont = "Inter";
   static const String bentonSansBoldFont = "BentonSans Bold";

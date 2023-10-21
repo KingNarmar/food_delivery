@@ -8,10 +8,12 @@ import '../../componants/custom_text_form_field.dart';
 import '../../componants/linear_gradient_text.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({
+  LoginScreen({
     super.key,
   });
-
+  final GlobalKey<FormState> _key = GlobalKey();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,6 +32,7 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: SingleChildScrollView(
                   child: Form(
+                    key: _key,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -64,14 +67,39 @@ class LoginScreen extends StatelessWidget {
                         const SizedBox(
                           height: 40,
                         ),
-                        const CustomTextFormField(
+                        CustomTextFormField(
                           hintText: "Email",
+                          controller: emailController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Email Can't be Empty";
+                            } else if (!value.contains("@") ||
+                                !value.contains(".com")) {
+                              return "Email format is wrong";
+                            }
+                            return null;
+                          },
+                          onChanged: (value) {
+                            _key.currentState!.validate();
+                          },
                         ),
                         const SizedBox(
                           height: 12,
                         ),
-                        const CustomTextFormField(
+                        CustomTextFormField(
                           hintText: "Password",
+                          controller: passwordController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Password Can't be Empty";
+                            } else if (value.length < 6) {
+                              return "Password should be more than 6 chr";
+                            }
+                            return null;
+                          },
+                          onChanged: (value) {
+                            _key.currentState!.validate();
+                          },
                         ),
                         const SizedBox(
                           height: 20,
@@ -112,7 +140,11 @@ class LoginScreen extends StatelessWidget {
                         const SizedBox(
                           height: 36,
                         ),
-                        CustomButton(text: "Login", onTap: () {})
+                        CustomButton(
+                            text: "Login",
+                            onTap: () {
+                              if (_key.currentState!.validate()) {}
+                            })
                       ],
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/screens/login_screen/login_screen.dart';
 import 'package:food_delivery/screens/onBoarding1/on_boarding1.dart';
+import 'package:food_delivery/screens/payment_method/payment_method_screen.dart';
 import 'package:food_delivery/screens/sign_up_process_screen/sign_up_process_screen.dart';
 import 'package:food_delivery/screens/sign_up_screen/sign_up_screen.dart';
 
@@ -18,11 +19,12 @@ class MyApp extends StatelessWidget {
         "splash": (context) => const SplashScreen(),
         "onBoarding1": (context) => const OnBoarding1(),
         "onBoarding2": (context) => const OnBoarding2(),
-        "login": (context) => const LoginScreen(),
+        "login": (context) => LoginScreen(),
         "signUp": (context) => const SignUpScreen(),
-        "signUpProcess": (context) => const SignUpProcessScreen()
+        "signUpProcess": (context) => const SignUpProcessScreen(),
+        "payment": (context) => const PaymentMethodScreen()
       },
-      initialRoute: "signUp",
+      initialRoute: "splash",
     );
   }
 }

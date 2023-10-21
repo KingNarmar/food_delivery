@@ -49,14 +49,22 @@ import 'package:flutter/material.dart';
 class CustomTextFormField extends StatelessWidget {
   const CustomTextFormField({
     Key? key,
-    required this.hintText,
+    this.hintText,
     this.prefix,
     this.suffixIcon,
+    this.child,
+    this.validator,
+    this.onChanged,
+    this.controller,
   }) : super(key: key);
 
-  final String hintText;
+  final String? hintText;
   final Widget? prefix;
   final Widget? suffixIcon;
+  final Widget? child;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -88,6 +96,9 @@ class CustomTextFormField extends StatelessWidget {
               ),
             Expanded(
               child: TextFormField(
+                controller: controller,
+                validator: validator,
+                onChanged: onChanged,
                 decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: hintText,

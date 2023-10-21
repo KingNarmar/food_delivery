@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key, required this.child});
+  const CustomContainer({super.key, required this.child, this.height = 57});
   final Widget child;
+  final double height;
   @override
   Widget build(BuildContext context) {
     return Container(
         width: double.infinity,
-        height: 57,
+        height: height,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(

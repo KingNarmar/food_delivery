@@ -14,6 +14,8 @@ abstract class Assets {
   static const String payoneerPic = "assets/images/Payoneer pic.png";
   static const String payPalPic = "assets/images/paypal pic.png";
   static const String visaPic = "assets/images/visa pic.png";
+  static const String galaryPic = "assets/images/GalleryPic.png";
+  static const String cameraPic = "assets/images/cameraPic.png";
   static const String vigaFont = "Viga";
   static const String interFont = "Inter";
   static const String bentonSansBoldFont = "BentonSans Bold";

@@ -84,42 +84,40 @@ class CustomTextFormField extends StatelessWidget {
           )
         ],
       ),
-      child: Form(
-        child: Row(
-          children: [
-            if (prefix != null)
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 20,
-                ),
-                child: prefix,
+      child: Row(
+        children: [
+          if (prefix != null)
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
               ),
-            Expanded(
-              child: TextFormField(
-                controller: controller,
-                validator: validator,
-                onChanged: onChanged,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: hintText,
-                  hintStyle: TextStyle(
-                    color: const Color(0xFF3B3B3B).withOpacity(0.3),
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 28,
-                  ),
+              child: prefix,
+            ),
+          Expanded(
+            child: TextFormField(
+              controller: controller,
+              validator: validator,
+              onChanged: onChanged,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                hintText: hintText,
+                hintStyle: TextStyle(
+                  color: const Color(0xFF3B3B3B).withOpacity(0.3),
+                ),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 28,
                 ),
               ),
             ),
-            if (suffixIcon != null)
-              Padding(
-                padding: const EdgeInsets.only(
-                  right: 16,
-                ),
-                child: suffixIcon,
+          ),
+          if (suffixIcon != null)
+            Padding(
+              padding: const EdgeInsets.only(
+                right: 16,
               ),
-          ],
-        ),
+              child: suffixIcon,
+            ),
+        ],
       ),
     );
   }

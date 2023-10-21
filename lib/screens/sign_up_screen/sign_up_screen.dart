@@ -109,7 +109,9 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       CustomButton(
                         text: "Create Account",
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, "signUpProcess");
+                        },
                       ),
                       const SizedBox(
                         height: 20,

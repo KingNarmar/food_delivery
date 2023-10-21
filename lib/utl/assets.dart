@@ -9,6 +9,7 @@ abstract class Assets {
   static const String profileIcon = "assets/images/ProfileIcon.png";
   static const String passwordIcom = "assets/images/passwordIcon.png";
   static const String showPasswordIcon = "assets/images/ShowPasswordIcon.png";
+  static const String backWordIcon = "assets/images/backwordIcon.png";
   static const String chickIcon = "assets/images/checkIcon.png";
   static const String vigaFont = "Viga";
   static const String interFont = "Inter";

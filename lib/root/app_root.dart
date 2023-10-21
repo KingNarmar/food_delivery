@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/screens/login_page/login_page.dart';
+import 'package:food_delivery/screens/login_screen/login_screen.dart';
 import 'package:food_delivery/screens/onBoarding1/on_boarding1.dart';
+import 'package:food_delivery/screens/sign_up_process_screen/sign_up_process_screen.dart';
 import 'package:food_delivery/screens/sign_up_screen/sign_up_screen.dart';
 
 import '../screens/onBoarding2/on_boarding2.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         "onBoarding2": (context) => const OnBoarding2(),
         "login": (context) => const LoginScreen(),
         "signUp": (context) => const SignUpScreen(),
+        "signUpProcess": (context) => const SignUpProcessScreen()
       },
       initialRoute: "signUp",
     );

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/screens/login_screen/login_screen.dart';
 import 'package:food_delivery/screens/onBoarding1/on_boarding1.dart';
 import 'package:food_delivery/screens/payment_method/payment_method_screen.dart';
+import 'package:food_delivery/screens/set_location_screen/set_location_screen.dart';
 import 'package:food_delivery/screens/sign_up_process_screen/sign_up_process_screen.dart';
 import 'package:food_delivery/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:food_delivery/screens/upload_photo_screen/upload_photo_screen.dart';
+import 'package:food_delivery/screens/upload_preview_screen/upload_preview_screen.dart';
 
 import '../screens/onBoarding2/on_boarding2.dart';
 import '../screens/splash_screen/splash_screen.dart';
@@ -24,7 +26,9 @@ class MyApp extends StatelessWidget {
         "signUp": (context) => SignUpScreen(),
         "signUpProcess": (context) => SignUpProcessScreen(),
         "payment": (context) => const PaymentMethodScreen(),
-        "uploadPhoto": (context) => const UploadPhotoScreen()
+        "uploadPhoto": (context) => const UploadPhotoScreen(),
+        "uploadPreview": (context) => const UploadPreviewScreen(),
+        "setLocation": (context) => const SetLocationScreen()
       },
       initialRoute: "payment",
     );

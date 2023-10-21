@@ -116,7 +116,12 @@ class UploadPhotoScreen extends StatelessWidget {
                 const SizedBox(
                   height: 165,
                 ),
-                Center(child: CustomButton(text: "Next", onTap: () {}))
+                Center(
+                    child: CustomButton(
+                        text: "Next",
+                        onTap: () {
+                          Navigator.pushNamed(context, "uploadPreview");
+                        }))
               ],
             ),
           ),

@@ -20,6 +20,8 @@ abstract class Assets {
   static const String closeIcon = "assets/images/Close Icon.png";
   static const String locationIcon = "assets/images/placeholder Icon.png";
   static const String donePic = "assets/images/DonePic.png";
+  static const String messageIcon = "assets/images/MessageIcon.png";
+  static const String emailIconViaMethodScreen = "assets/images/Email icon.png";
   static const String vigaFont = "Viga";
   static const String interFont = "Inter";
   static const String bentonSansBoldFont = "BentonSans Bold";

@@ -8,6 +8,7 @@ import 'package:food_delivery/screens/sign_up_screen/sign_up_screen.dart';
 import 'package:food_delivery/screens/singup_success/singup_success_screen.dart';
 import 'package:food_delivery/screens/upload_photo_screen/upload_photo_screen.dart';
 import 'package:food_delivery/screens/upload_preview_screen/upload_preview_screen.dart';
+import 'package:food_delivery/screens/verification_code_screen/verification_code_screen.dart';
 
 import '../screens/onBoarding2/on_boarding2.dart';
 import '../screens/splash_screen/splash_screen.dart';
@@ -30,9 +31,10 @@ class MyApp extends StatelessWidget {
         "uploadPhoto": (context) => const UploadPhotoScreen(),
         "uploadPreview": (context) => const UploadPreviewScreen(),
         "setLocation": (context) => const SetLocationScreen(),
-        "singUpSuccess": (context) => const SingUpSuccessScreen()
+        "singUpSuccess": (context) => const SingUpSuccessScreen(),
+        "verificationCode": (context) => const VerificationCodeScreen()
       },
-      initialRoute: "setLocation",
+      initialRoute: "verificationCode",
     );
   }
 }

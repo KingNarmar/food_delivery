@@ -50,7 +50,12 @@ class SingUpSuccessScreen extends StatelessWidget {
                   const SizedBox(
                     height: 192,
                   ),
-                  CustomButton(text: "Try Order", onTap: () {})
+                  CustomButton(
+                      text: "Try Order",
+                      onTap: () {
+                        Navigator.pushReplacementNamed(
+                            context, "verificationCode");
+                      })
                 ],
               ),
             ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/screens/login_screen/login_screen.dart';
 import 'package:food_delivery/screens/onBoarding1/on_boarding1.dart';
 import 'package:food_delivery/screens/payment_method/payment_method_screen.dart';
+import 'package:food_delivery/screens/reset_password_screen/reset_password_screen.dart';
 import 'package:food_delivery/screens/set_location_screen/set_location_screen.dart';
 import 'package:food_delivery/screens/sign_up_process_screen/sign_up_process_screen.dart';
 import 'package:food_delivery/screens/sign_up_screen/sign_up_screen.dart';
@@ -34,9 +35,10 @@ class MyApp extends StatelessWidget {
         "setLocation": (context) => const SetLocationScreen(),
         "singUpSuccess": (context) => const SingUpSuccessScreen(),
         "verificationCode": (context) => const VerificationCodeScreen(),
-        "viaMethod": (context) => const ViaMethodScreen()
+        "viaMethod": (context) => const ViaMethodScreen(),
+        "resetPassword": (context) => ResetPasswordScreen()
       },
-      initialRoute: "viaMethod",
+      initialRoute: "resetPassword",
     );
   }
 }

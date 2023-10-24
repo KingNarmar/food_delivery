@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:food_delivery/componants/app_bar_backword_icon.dart';
 import 'package:food_delivery/componants/custom_button.dart';
 import 'package:food_delivery/utl/assets.dart';
+import 'package:food_delivery/utl/files.dart';
 
 class UploadPreviewScreen extends StatelessWidget {
   const UploadPreviewScreen({super.key});
@@ -74,16 +77,18 @@ class UploadPreviewScreen extends StatelessWidget {
                     Center(
                       child: Stack(
                         children: [
-                          Container(
-                            width: 251,
-                            height: 260,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(Assets.testPic),
-                                fit: BoxFit.fill,
+                          if (PhotoFile.image != null)
+                            Container(
+                              width: 251,
+                              height: 260,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                  image: FileImage(File(PhotoFile.image!.path)),
+                                  fit: BoxFit.fill,
+                                ),
                               ),
                             ),
-                          ),
                           Positioned(
                             top: 25,
                             right: 15,

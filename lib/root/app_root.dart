@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         "viaMethod": (context) => const ViaMethodScreen(),
         "resetPassword": (context) => ResetPasswordScreen()
       },
-      initialRoute: "resetPassword",
+      initialRoute: "uploadPhoto",
     );
   }
 }

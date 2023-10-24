@@ -1,8 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:food_delivery/componants/app_bar_backword_icon.dart';
 import 'package:food_delivery/componants/custom_button.dart';
 import 'package:food_delivery/componants/custom_container.dart';
 import 'package:food_delivery/utl/assets.dart';
+import 'package:food_delivery/utl/files.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UploadPhotoScreen extends StatelessWidget {
   const UploadPhotoScreen({super.key});
@@ -71,55 +75,71 @@ class UploadPhotoScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    const CustomContainer(
-                      height: 129,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image(
-                            image: AssetImage(Assets.galaryPic),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            'From Gallery',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 14,
-                              fontFamily: 'BentonSans Bold',
-                              fontWeight: FontWeight.w400,
-                              height: 0.13,
+                    GestureDetector(
+                      onTap: () async {
+                        ImagePicker picker = ImagePicker();
+                        final XFile? file =
+                            await picker.pickImage(source: ImageSource.gallery);
+                        PhotoFile.image = File(file!.path);
+                      },
+                      child: const CustomContainer(
+                        height: 129,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image(
+                              image: AssetImage(Assets.galaryPic),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'From Gallery',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontFamily: 'BentonSans Bold',
+                                fontWeight: FontWeight.w400,
+                                height: 0.13,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    const CustomContainer(
-                      height: 129,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image(
-                            image: AssetImage(Assets.cameraPic),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text(
-                            'Take Photo',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 14,
-                              fontFamily: 'BentonSans Bold',
-                              fontWeight: FontWeight.w400,
-                              height: 0.13,
+                    GestureDetector(
+                      onTap: () async {
+                        ImagePicker picker = ImagePicker();
+                        final XFile? file =
+                            await picker.pickImage(source: ImageSource.camera);
+                        PhotoFile.image = File(file!.path);
+                      },
+                      child: const CustomContainer(
+                        height: 129,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image(
+                              image: AssetImage(Assets.cameraPic),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              height: 20,
+                            ),
+                            Text(
+                              'Take Photo',
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 14,
+                                fontFamily: 'BentonSans Bold',
+                                fontWeight: FontWeight.w400,
+                                height: 0.13,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                     const SizedBox(

@@ -3,6 +3,7 @@ import 'package:food_delivery/componants/app_bar_backword_icon.dart';
 import 'package:food_delivery/componants/custom_button.dart';
 import 'package:food_delivery/componants/custom_text_form_field.dart';
 import 'package:food_delivery/utl/assets.dart';
+import 'package:food_delivery/utl/strings.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
   ResetPasswordScreen({super.key});
@@ -10,7 +11,7 @@ class ResetPasswordScreen extends StatelessWidget {
   final TextEditingController confirmPasswordController =
       TextEditingController();
   final GlobalKey<FormState> _key = GlobalKey();
-  String password = "";
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -92,7 +93,7 @@ class ResetPasswordScreen extends StatelessWidget {
                         ),
                         controller: newPasswordController,
                         validator: (newPassword) {
-                          password = newPassword!;
+                          AppStrings.password = newPassword!;
                           if (newPassword == "") {
                             return "New Password Can't Be Empty";
                           } else if (newPassword.length < 6) {
@@ -116,7 +117,7 @@ class ResetPasswordScreen extends StatelessWidget {
                         ),
                         controller: confirmPasswordController,
                         validator: (confirmPassword) {
-                          if (confirmPassword != password) {
+                          if (confirmPassword != AppStrings.password) {
                             return "Password not Match";
                           }
                           return null;

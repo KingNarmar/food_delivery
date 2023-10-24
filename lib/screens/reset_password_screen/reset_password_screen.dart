@@ -133,7 +133,9 @@ class ResetPasswordScreen extends StatelessWidget {
                         child: CustomButton(
                           text: "Next",
                           onTap: () {
-                            if (_key.currentState!.validate()) {}
+                            if (_key.currentState!.validate()) {
+                              Navigator.pushNamed(context, "resetPasswordDone");
+                            }
                           },
                         ),
                       )

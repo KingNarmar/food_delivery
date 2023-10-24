@@ -13,6 +13,7 @@ import 'package:food_delivery/screens/verification_code_screen/verification_code
 import 'package:food_delivery/screens/via_method/via_method_screen.dart';
 
 import '../screens/onBoarding2/on_boarding2.dart';
+import '../screens/reset_password_success_notification/reset_password_success_notification.dart';
 import '../screens/splash_screen/splash_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -36,9 +37,11 @@ class MyApp extends StatelessWidget {
         "singUpSuccess": (context) => const SingUpSuccessScreen(),
         "verificationCode": (context) => const VerificationCodeScreen(),
         "viaMethod": (context) => const ViaMethodScreen(),
-        "resetPassword": (context) => ResetPasswordScreen()
+        "resetPassword": (context) => ResetPasswordScreen(),
+        "resetPasswordDone": (context) =>
+            const RestPasswordSuccessNotification()
       },
-      initialRoute: "uploadPhoto",
+      initialRoute: "resetPasswordDone",
     );
   }
 }

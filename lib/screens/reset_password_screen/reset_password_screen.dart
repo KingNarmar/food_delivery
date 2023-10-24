@@ -3,14 +3,11 @@ import 'package:food_delivery/componants/app_bar_backword_icon.dart';
 import 'package:food_delivery/componants/custom_button.dart';
 import 'package:food_delivery/componants/custom_text_form_field.dart';
 import 'package:food_delivery/utl/assets.dart';
+import 'package:food_delivery/utl/controllers.dart';
 import 'package:food_delivery/utl/strings.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
-  ResetPasswordScreen({super.key});
-  final TextEditingController newPasswordController = TextEditingController();
-  final TextEditingController confirmPasswordController =
-      TextEditingController();
-  final GlobalKey<FormState> _key = GlobalKey();
+  const ResetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +29,7 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             SingleChildScrollView(
               child: Form(
-                key: _key,
+                key: ResetPasswordControllers.key,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 14),
                   child: Column(
@@ -91,7 +88,8 @@ class ResetPasswordScreen extends StatelessWidget {
                             Assets.showPasswordActiveIcon,
                           ),
                         ),
-                        controller: newPasswordController,
+                        controller:
+                            ResetPasswordControllers.newPasswordController,
                         validator: (newPassword) {
                           AppStrings.password = newPassword!;
                           if (newPassword == "") {
@@ -102,7 +100,7 @@ class ResetPasswordScreen extends StatelessWidget {
                           return null;
                         },
                         onChanged: (newPassword) {
-                          _key.currentState!.validate();
+                          ResetPasswordControllers.key.currentState!.validate();
                         },
                       ),
                       const SizedBox(
@@ -115,7 +113,8 @@ class ResetPasswordScreen extends StatelessWidget {
                             Assets.eyeIcon,
                           ),
                         ),
-                        controller: confirmPasswordController,
+                        controller:
+                            ResetPasswordControllers.confirmPasswordController,
                         validator: (confirmPassword) {
                           if (confirmPassword != AppStrings.password) {
                             return "Password not Match";
@@ -123,7 +122,7 @@ class ResetPasswordScreen extends StatelessWidget {
                           return null;
                         },
                         onChanged: (confirmPassword) {
-                          _key.currentState!.validate();
+                          ResetPasswordControllers.key.currentState!.validate();
                         },
                       ),
                       const SizedBox(
@@ -133,7 +132,8 @@ class ResetPasswordScreen extends StatelessWidget {
                         child: CustomButton(
                           text: "Next",
                           onTap: () {
-                            if (_key.currentState!.validate()) {
+                            if (ResetPasswordControllers.key.currentState!
+                                .validate()) {
                               Navigator.pushNamed(context, "resetPasswordDone");
                             }
                           },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/componants/custom_button.dart';
 import 'package:food_delivery/utl/assets.dart';
+import 'package:food_delivery/utl/controllers.dart';
 
 import '../../componants/custom_list_tile.dart';
 
@@ -8,12 +9,10 @@ import '../../componants/custom_text_form_field.dart';
 import '../../componants/linear_gradient_text.dart';
 
 class LoginScreen extends StatelessWidget {
-  LoginScreen({
+  const LoginScreen({
     super.key,
   });
-  final GlobalKey<FormState> _key = GlobalKey();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,7 +31,7 @@ class LoginScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: SingleChildScrollView(
                   child: Form(
-                    key: _key,
+                    key: LoginScreenControllers.key,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -69,7 +68,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         CustomTextFormField(
                           hintText: "Email",
-                          controller: emailController,
+                          controller: LoginScreenControllers.emailController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return "Email Can't be Empty";
@@ -80,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                             return null;
                           },
                           onChanged: (value) {
-                            _key.currentState!.validate();
+                            LoginScreenControllers.key.currentState!.validate();
                           },
                         ),
                         const SizedBox(
@@ -88,7 +87,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                         CustomTextFormField(
                           hintText: "Password",
-                          controller: passwordController,
+                          controller: LoginScreenControllers.passwordController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return "Password Can't be Empty";
@@ -98,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                             return null;
                           },
                           onChanged: (value) {
-                            _key.currentState!.validate();
+                            LoginScreenControllers.key.currentState!.validate();
                           },
                         ),
                         const SizedBox(
@@ -143,7 +142,8 @@ class LoginScreen extends StatelessWidget {
                         CustomButton(
                             text: "Login",
                             onTap: () {
-                              if (_key.currentState!.validate()) {}
+                              if (LoginScreenControllers.key.currentState!
+                                  .validate()) {}
                             })
                       ],
                     ),

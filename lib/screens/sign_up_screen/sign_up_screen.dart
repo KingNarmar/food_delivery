@@ -3,15 +3,12 @@ import 'package:food_delivery/componants/custom_button.dart';
 import 'package:food_delivery/componants/custom_text_form_field.dart';
 import 'package:food_delivery/componants/linear_gradient_text.dart';
 import 'package:food_delivery/utl/assets.dart';
+import 'package:food_delivery/utl/controllers.dart';
 import '../../componants/check_list_icon.dart';
 import '../../componants/small_opacity_text.dart';
 
 class SignUpScreen extends StatelessWidget {
-  SignUpScreen({super.key});
-  final GlobalKey<FormState> _key = GlobalKey();
-  final TextEditingController profileController = TextEditingController();
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +27,7 @@ class SignUpScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: Form(
-                  key: _key,
+                  key: SignUpControllers.key,
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +68,7 @@ class SignUpScreen extends StatelessWidget {
                         CustomTextFormField(
                           hintText: "Anamwp . . |",
                           prefix: Image.asset(Assets.profileIcon),
-                          controller: profileController,
+                          controller: SignUpControllers.profileController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return "Profile Name Can't be Empty";
@@ -81,7 +78,7 @@ class SignUpScreen extends StatelessWidget {
                             return null;
                           },
                           onChanged: (value) {
-                            _key.currentState!.validate();
+                            SignUpControllers.key.currentState!.validate();
                           },
                         ),
                         const SizedBox(
@@ -90,7 +87,7 @@ class SignUpScreen extends StatelessWidget {
                         CustomTextFormField(
                           hintText: "Email",
                           prefix: Image.asset(Assets.emailIcon),
-                          controller: emailController,
+                          controller: SignUpControllers.emailController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return "Email Can't be Empty";
@@ -101,7 +98,7 @@ class SignUpScreen extends StatelessWidget {
                             return null;
                           },
                           onChanged: (value) {
-                            _key.currentState!.validate();
+                            SignUpControllers.key.currentState!.validate();
                           },
                         ),
                         const SizedBox(
@@ -111,7 +108,7 @@ class SignUpScreen extends StatelessWidget {
                           hintText: "Password",
                           prefix: Image.asset(Assets.passwordIcom),
                           suffixIcon: Image.asset(Assets.showPasswordIcon),
-                          controller: passwordController,
+                          controller: SignUpControllers.passwordController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return "Password Can't be Empty";
@@ -121,7 +118,7 @@ class SignUpScreen extends StatelessWidget {
                             return null;
                           },
                           onChanged: (value) {
-                            _key.currentState!.validate();
+                            SignUpControllers.key.currentState!.validate();
                           },
                         ),
                         const SizedBox(
@@ -152,7 +149,8 @@ class SignUpScreen extends StatelessWidget {
                         CustomButton(
                           text: "Create Account",
                           onTap: () {
-                            if (_key.currentState!.validate()) {
+                            if (SignUpControllers.key.currentState!
+                                .validate()) {
                               Navigator.pushNamed(context, "signUpProcess");
                             }
                           },

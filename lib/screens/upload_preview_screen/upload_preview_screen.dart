@@ -89,6 +89,18 @@ class UploadPreviewScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
+                          if (PhotoFile.image == null)
+                            Container(
+                              width: 251,
+                              height: 260,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: const DecorationImage(
+                                  image: AssetImage(Assets.testPic),
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
                           Positioned(
                             top: 25,
                             right: 15,

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         "onBoarding2": (context) => const OnBoarding2(),
         "login": (context) => const LoginScreen(),
         "signUp": (context) => const SignUpScreen(),
-        "signUpProcess": (context) => SignUpProcessScreen(),
+        "signUpProcess": (context) => const SignUpProcessScreen(),
         "payment": (context) => const PaymentMethodScreen(),
         "uploadPhoto": (context) => const UploadPhotoScreen(),
         "uploadPreview": (context) => const UploadPreviewScreen(),
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         "resetPasswordDone": (context) =>
             const RestPasswordSuccessNotification()
       },
-      initialRoute: "resetPasswordDone",
+      initialRoute: "signUpProcess",
     );
   }
 }

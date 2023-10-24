@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/componants/custom_button.dart';
 import 'package:food_delivery/componants/custom_text_form_field.dart';
 import 'package:food_delivery/utl/assets.dart';
+import 'package:food_delivery/utl/controllers.dart';
 
 import '../../componants/app_bar_backword_icon.dart';
 
 class SignUpProcessScreen extends StatelessWidget {
-  SignUpProcessScreen({super.key});
-  final GlobalKey<FormState> _key = GlobalKey();
-  final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController lastNameController = TextEditingController();
-  final TextEditingController mobileController = TextEditingController();
+  const SignUpProcessScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -83,12 +81,13 @@ class SignUpProcessScreen extends StatelessWidget {
                       height: 20,
                     ),
                     Form(
-                      key: _key,
+                      key: SignUpProcessControllers.key,
                       child: Column(
                         children: [
                           CustomTextFormField(
                             hintText: "First Name",
-                            controller: firstNameController,
+                            controller:
+                                SignUpProcessControllers.firstNameController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return "First Name Can't be Empty";
@@ -98,7 +97,8 @@ class SignUpProcessScreen extends StatelessWidget {
                               return null;
                             },
                             onChanged: (value) {
-                              _key.currentState!.validate();
+                              SignUpProcessControllers.key.currentState!
+                                  .validate();
                             },
                           ),
                           const SizedBox(
@@ -106,7 +106,8 @@ class SignUpProcessScreen extends StatelessWidget {
                           ),
                           CustomTextFormField(
                             hintText: "Last Name",
-                            controller: lastNameController,
+                            controller:
+                                SignUpProcessControllers.lastNameController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
                                 return "Last Name Can't be Empty";
@@ -116,7 +117,8 @@ class SignUpProcessScreen extends StatelessWidget {
                               return null;
                             },
                             onChanged: (value) {
-                              _key.currentState!.validate();
+                              SignUpProcessControllers.key.currentState!
+                                  .validate();
                             },
                           ),
                           const SizedBox(
@@ -124,17 +126,19 @@ class SignUpProcessScreen extends StatelessWidget {
                           ),
                           CustomTextFormField(
                             hintText: "Mobile Number",
-                            controller: mobileController,
+                            controller:
+                                SignUpProcessControllers.mobileController,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return "Last Name Can't be Empty";
+                                return "Mobile Number Can't be Empty";
                               } else if (value.length < 11) {
-                                return "Last Name should be more than 6 chr";
+                                return "Mobile Number should be more than 11 chr";
                               }
                               return null;
                             },
                             onChanged: (value) {
-                              _key.currentState!.validate();
+                              SignUpProcessControllers.key.currentState!
+                                  .validate();
                             },
                           ),
                           const SizedBox(
@@ -143,7 +147,8 @@ class SignUpProcessScreen extends StatelessWidget {
                           CustomButton(
                               text: "Next",
                               onTap: () {
-                                if (_key.currentState!.validate()) {
+                                if (SignUpProcessControllers.key.currentState!
+                                    .validate()) {
                                   Navigator.pushNamed(context, "payment");
                                 }
                               })

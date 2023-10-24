@@ -23,3 +23,12 @@ abstract class LoginScreenControllers {
   static final TextEditingController passwordController =
       TextEditingController();
 }
+
+abstract class SignUpProcessControllers {
+  static final GlobalKey<FormState> key = GlobalKey();
+  static final TextEditingController firstNameController =
+      TextEditingController();
+  static final TextEditingController lastNameController =
+      TextEditingController();
+  static final TextEditingController mobileController = TextEditingController();
+}

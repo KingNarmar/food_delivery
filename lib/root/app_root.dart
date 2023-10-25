@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/screens/bottom_nav_bar/bottom_nav_bar.dart';
 import 'package:food_delivery/screens/home_screen/home_screen.dart';
 import 'package:food_delivery/screens/login_screen/login_screen.dart';
 import 'package:food_delivery/screens/onBoarding1/on_boarding1.dart';
@@ -38,9 +39,10 @@ class MyApp extends StatelessWidget {
         "resetPassword": (context) => const ResetPasswordScreen(),
         "resetPasswordDone": (context) =>
             const RestPasswordSuccessNotification(),
-        "home": (context) => const HomeScreen()
+        "home": (context) => const HomeScreen(),
+        "bottomNavBar": (context) => BottomNavBarScreen()
       },
-      initialRoute: "home",
+      initialRoute: "bottomNavBar",
     );
   }
 }

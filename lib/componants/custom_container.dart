@@ -5,14 +5,16 @@ class CustomContainer extends StatelessWidget {
       {super.key,
       required this.child,
       this.height = 57,
-      this.color = Colors.white});
+      this.color = Colors.white,
+      this.width});
   final Widget child;
   final double height;
   final Color? color;
+  final double? width;
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: double.infinity,
+        width: width,
         height: height,
         decoration: ShapeDecoration(
           color: color,

@@ -25,6 +25,11 @@ abstract class Assets {
   static const String showPasswordActiveIcon =
       "assets/images/ShowPassword active icon.png";
   static const String eyeIcon = "assets/images/Eye Icon.png";
+  static const String notificationIcon = "assets/images/NotificationIcon.png";
+  static const String filterIcon = "assets/images/FilterIcon.png";
+  static const String promoImage = "assets/images/PromoAdvertising.png";
+  static const String veganResto = "assets/images/veganResto.png";
+  static const String healthyFood = "assets/images/healthyFood.png";
   static const String vigaFont = "Viga";
   static const String interFont = "Inter";
   static const String bentonSansBoldFont = "BentonSans Bold";

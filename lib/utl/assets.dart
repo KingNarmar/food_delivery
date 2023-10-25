@@ -30,6 +30,9 @@ abstract class Assets {
   static const String promoImage = "assets/images/PromoAdvertising.png";
   static const String veganResto = "assets/images/veganResto.png";
   static const String healthyFood = "assets/images/healthyFood.png";
+  static const String menuPhoto1 = "assets/images/MenuPhoto1.png";
+  static const String menuPhoto2 = "assets/images/PhotoMenu2.png";
+  static const String menuPhoto3 = "assets/images/PhotoMenu3.png";
   static const String vigaFont = "Viga";
   static const String interFont = "Inter";
   static const String bentonSansBoldFont = "BentonSans Bold";

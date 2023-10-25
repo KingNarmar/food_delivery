@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/componants/custom_container.dart';
 
 import 'package:food_delivery/componants/gradient_icon.dart';
 
@@ -8,6 +9,7 @@ import '../../componants/custom_filter_icon.dart';
 import '../../componants/custom_search_bar.dart';
 import '../../componants/header_of_list_view.dart';
 import '../../componants/nearest_restaurants_list_view.dart';
+import '../../componants/popular_menu_list_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -79,8 +81,13 @@ class HomeScreen extends StatelessWidget {
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
                   //promo Image
-                  Image.asset(
-                    Assets.promoImage,
+                  CustomContainer(
+                    width: double.infinity,
+                    height: MediaQuery.sizeOf(context).height * 0.184729064,
+                    child: Image.asset(
+                      Assets.promoImage,
+                      fit: BoxFit.fill,
+                    ),
                   ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.030788177,
@@ -98,9 +105,11 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
+                  //Popular Menu List view
+                  const PopularMenuListView()
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

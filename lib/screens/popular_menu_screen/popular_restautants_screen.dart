@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/componants/custom_container.dart';
-
-import 'package:food_delivery/componants/gradient_icon.dart';
-
-import 'package:food_delivery/utl/assets.dart';
+import 'package:food_delivery/componants/nearest_rest_item.dart';
+import 'package:food_delivery/models/nearest_rest_model.dart';
 
 import '../../componants/custom_filter_icon.dart';
 import '../../componants/custom_search_bar.dart';
-import '../../componants/header_of_list_view.dart';
-import '../../componants/nearest_restaurants_list_view.dart';
-import '../../componants/popular_menu_list_view.dart';
+import '../../componants/gradient_icon.dart';
+import '../../utl/assets.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class PopularRestaurantsScreen extends StatelessWidget {
+  const PopularRestaurantsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,6 +28,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //heddin app bar
                   SizedBox(
@@ -80,41 +77,39 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  //promo Image
-                  CustomContainer(
-                    width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height * 0.184729064,
-                    child: Image.asset(
-                      Assets.promoImage,
-                      fit: BoxFit.fill,
+                  const Text(
+                    'Popular Restaurant',
+                    style: TextStyle(
+                      color: Color(0xFF09041B),
+                      fontSize: 15,
+                      fontFamily: 'BentonSans Bold',
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 0.030788177,
-                  ),
-                  const HeaderOfListView(
-                    bigText: "Nearest Restaurant",
-                  ),
-                  SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  //nearest resto list view
-                  const NearestRestaurantsListView(),
-                  SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 0.024630542,
-                  ),
-                  HeaderOfListView(
-                      bigText: "Popular Menu",
-                      onTap1: () {
-                        Navigator.pushNamed(
-                            context, "popularRestaurantsScreen");
-                        print("hi");
-                      }),
-                  SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 0.024630542,
-                  ),
-                  //Popular Menu List view
-                  const PopularMenuListView()
+                  Expanded(
+                    child: GridView.builder(
+                      itemCount: NearestRestModel.restaurants.length,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2),
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 20, bottom: 20),
+                          child: NearestRestItem(
+                              model: NearestRestModel(
+                                  image:
+                                      NearestRestModel.restaurants[index].image,
+                                  title:
+                                      NearestRestModel.restaurants[index].title,
+                                  subTitle: NearestRestModel
+                                      .restaurants[index].subTitle)),
+                        );
+                      },
+                    ),
+                  )
                 ],
               ),
             ),

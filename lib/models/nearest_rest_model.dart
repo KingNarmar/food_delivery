@@ -14,10 +14,24 @@ class NearestRestModel {
     NearestRestModel(
         image: Assets.healthyFood, title: 'Healthy Food', subTitle: "8 Mins"),
     NearestRestModel(
-        image: Assets.healthyFood, title: 'Healthy Food', subTitle: "8 Mins"),
+        image: Assets.restaurantPhoto3,
+        title: 'Good Food',
+        subTitle: "12 Mins"),
     NearestRestModel(
-        image: Assets.healthyFood, title: 'Healthy Food', subTitle: "8 Mins"),
+        image: Assets.restaurantPhoto4,
+        title: 'Smart Resto',
+        subTitle: "8 Mins"),
     NearestRestModel(
-        image: Assets.healthyFood, title: 'Healthy Food', subTitle: "8 Mins"),
+        image: Assets.restaurantPhoto4,
+        title: 'Smart Resto',
+        subTitle: "8 Mins"),
+    NearestRestModel(
+        image: Assets.restaurantPhoto4,
+        title: 'Smart Resto',
+        subTitle: "8 Mins"),
+    NearestRestModel(
+        image: Assets.restaurantPhoto4,
+        title: 'Smart Resto',
+        subTitle: "8 Mins"),
   ];
 }

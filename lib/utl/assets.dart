@@ -33,6 +33,8 @@ abstract class Assets {
   static const String menuPhoto1 = "assets/images/MenuPhoto1.png";
   static const String menuPhoto2 = "assets/images/PhotoMenu2.png";
   static const String menuPhoto3 = "assets/images/PhotoMenu3.png";
+  static const String restaurantPhoto3 = "assets/images/RestaurantImage3.png";
+  static const String restaurantPhoto4 = "assets/images/RestaurantImage4.png";
   static const String vigaFont = "Viga";
   static const String interFont = "Inter";
   static const String bentonSansBoldFont = "BentonSans Bold";

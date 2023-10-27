@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:food_delivery/componants/custom_container.dart';
+import 'package:food_delivery/componants/custom_button.dart';
 
-import 'package:food_delivery/componants/gradient_icon.dart';
-
-import 'package:food_delivery/utl/assets.dart';
-
-import '../../componants/custom_filter_icon.dart';
+import '../../componants/custom_filter_screen_list_view.dart';
 import '../../componants/custom_search_bar.dart';
-import '../../componants/header_of_list_view.dart';
-import '../../componants/nearest_restaurants_list_view.dart';
-import '../../componants/popular_menu_list_view.dart';
+import '../../componants/gradient_icon.dart';
+import '../../utl/assets.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+class FilterScreen extends StatelessWidget {
+  const FilterScreen({super.key});
+  static List<String> typeList = ['Restaurant', 'Menu'];
+  static List<String> locationList = ["1 KM", ">10 KM", "<10 KM"];
+  static List<String> foodList = [
+    'Cake',
+    'Soup',
+    'Main Course',
+    'Appetizer',
+    'Dessert'
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,6 +35,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   //heddin app bar
                   SizedBox(
@@ -66,7 +70,7 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.022167488,
                   ),
-                  //search bar and filter icon
+                  //search bar
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -74,46 +78,60 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(
                         width: 8,
                       ),
-                      CustomFilterIcon(),
                     ],
                   ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  //promo Image
-                  CustomContainer(
-                    width: double.infinity,
-                    height: MediaQuery.sizeOf(context).height * 0.184729064,
-                    child: Image.asset(
-                      Assets.promoImage,
-                      fit: BoxFit.fill,
+                  const Text(
+                    'Type',
+                    style: TextStyle(
+                      color: Color(0xFF09041B),
+                      fontSize: 15,
+                      fontFamily: 'BentonSans Bold',
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.sizeOf(context).height * 0.030788177,
+                    height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  const HeaderOfListView(
-                    bigText: "Nearest Restaurant",
+                  CustomFilterScreenListView(list: typeList),
+                  SizedBox(
+                    height: MediaQuery.sizeOf(context).height * 0.024630542,
+                  ),
+                  const Text(
+                    'Location',
+                    style: TextStyle(
+                      color: Color(0xFF09041B),
+                      fontSize: 15,
+                      fontFamily: 'BentonSans Bold',
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  //nearest resto list view
-                  const NearestRestaurantsListView(),
+                  CustomFilterScreenListView(list: locationList),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  HeaderOfListView(
-                      bigText: "Popular Menu",
-                      onTap1: () {
-                        Navigator.pushNamed(
-                            context, "popularRestaurantsScreen");
-                      }),
+                  const Text(
+                    'Food',
+                    style: TextStyle(
+                      color: Color(0xFF09041B),
+                      fontSize: 15,
+                      fontFamily: 'BentonSans Bold',
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  //Popular Menu List view
-                  const PopularMenuListView()
+                  CustomFilterScreenListView(list: foodList),
+                  SizedBox(
+                    height: MediaQuery.sizeOf(context).height * 0.169950739,
+                  ),
+                  Center(child: CustomButton(text: "Search", onTap: () {}))
                 ],
               ),
             ),

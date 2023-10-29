@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
             const PopularRestaurantsScreen(),
         "filterScreen": (context) => const FilterScreen()
       },
-      initialRoute: "filterScreen",
+      initialRoute: "bottomNavBar",
     );
   }
 }

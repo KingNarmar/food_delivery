@@ -4,12 +4,15 @@ import 'package:food_delivery/componants/custom_container.dart';
 import 'package:food_delivery/componants/gradient_icon.dart';
 
 import 'package:food_delivery/utl/assets.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 import '../../componants/custom_filter_icon.dart';
 import '../../componants/custom_search_bar.dart';
 import '../../componants/header_of_list_view.dart';
 import '../../componants/nearest_restaurants_list_view.dart';
 import '../../componants/popular_menu_list_view.dart';
+import '../filter_screen/filter_screen.dart';
+import '../popular_restaurants_screen/popular_restautants_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -67,14 +70,26 @@ class HomeScreen extends StatelessWidget {
                     height: MediaQuery.sizeOf(context).height * 0.022167488,
                   ),
                   //search bar and filter icon
-                  const Row(
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CustomSearchBar(text: "What do you want to order?"),
-                      SizedBox(
+                      const CustomSearchBar(text: "What do you want to order?"),
+                      const SizedBox(
                         width: 8,
                       ),
-                      CustomFilterIcon(),
+                      GestureDetector(
+                        onTap: () {
+                          PersistentNavBarNavigator.pushNewScreen(
+                            context,
+                            screen: const FilterScreen(),
+                            withNavBar:
+                                false, // OPTIONAL VALUE. True by default.
+                            pageTransitionAnimation:
+                                PageTransitionAnimation.cupertino,
+                          );
+                        },
+                        child: const CustomFilterIcon(),
+                      ),
                     ],
                   ),
                   SizedBox(
@@ -106,8 +121,13 @@ class HomeScreen extends StatelessWidget {
                   HeaderOfListView(
                       bigText: "Popular Menu",
                       onTap1: () {
-                        Navigator.pushNamed(
-                            context, "popularRestaurantsScreen");
+                        PersistentNavBarNavigator.pushNewScreen(
+                          context,
+                          screen: const PopularRestaurantsScreen(),
+                          withNavBar: false, // OPTIONAL VALUE. True by default.
+                          pageTransitionAnimation:
+                              PageTransitionAnimation.cupertino,
+                        );
                       }),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,

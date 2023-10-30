@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/componants/custom_button.dart';
 
-import '../../componants/custom_filter_screen_list_view.dart';
+import '../../componants/custom_filter_button_groupe.dart';
+
 import '../../componants/custom_search_bar.dart';
 import '../../componants/gradient_icon.dart';
 import '../../utl/assets.dart';
@@ -15,7 +16,10 @@ class FilterScreen extends StatelessWidget {
     'Soup',
     'Main Course',
     'Appetizer',
-    'Dessert'
+    'Dessert',
+    'Cake',
+    'Soup',
+    'Main Course',
   ];
   @override
   Widget build(BuildContext context) {
@@ -95,7 +99,7 @@ class FilterScreen extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  CustomFilterScreenListView(list: typeList),
+                  CustomFilterButtonGroupe(list: typeList),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
@@ -111,7 +115,7 @@ class FilterScreen extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  CustomFilterScreenListView(list: locationList),
+                  CustomFilterButtonGroupe(list: locationList),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
@@ -127,7 +131,7 @@ class FilterScreen extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.024630542,
                   ),
-                  CustomFilterScreenListView(list: foodList),
+                  CustomFilterButtonGroupe(list: foodList),
                   SizedBox(
                     height: MediaQuery.sizeOf(context).height * 0.169950739,
                   ),

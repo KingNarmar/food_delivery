@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         "resetPasswordDone": (context) =>
             const RestPasswordSuccessNotification(),
         "home": (context) => const HomeScreen(),
-        "bottomNavBar": (context) => BottomNavBarScreen(),
+        "bottomNavBar": (context) => const BottomNavBarScreen(),
         "popularRestaurantsScreen": (context) =>
             const PopularRestaurantsScreen(),
         "filterScreen": (context) => const FilterScreen()

@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/screens/home_screen/home_screen.dart';
 
 import 'package:food_delivery/screens/upload_photo_screen/upload_photo_screen.dart';
+import 'package:food_delivery/utl/controllers.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class BottomNavBarScreen extends StatelessWidget {
-  BottomNavBarScreen({super.key});
+  const BottomNavBarScreen({super.key});
 
-  final _controller = PersistentTabController(initialIndex: 0);
-  final List<Widget> screens = [const HomeScreen(), const UploadPhotoScreen()];
+  static const List<Widget> screens = [HomeScreen(), UploadPhotoScreen()];
   @override
   Widget build(BuildContext context) {
     return PersistentTabView(
       navBarHeight: 100,
       context,
       screens: screens,
-      controller: _controller,
+      controller: BottomNavBarControllers.controller,
       items: [
         PersistentBottomNavBarItem(
           icon: const Icon(CupertinoIcons.home, color: Color(0xff38D682)),

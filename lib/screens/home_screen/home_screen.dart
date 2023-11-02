@@ -131,7 +131,6 @@ class HomeScreen extends StatelessWidget {
                             pageTransitionAnimation:
                                 PageTransitionAnimation.cupertino,
                           );
-                          print("fffff");
                         }),
                     SizedBox(
                       height: MediaQuery.sizeOf(context).height * 0.024630542,

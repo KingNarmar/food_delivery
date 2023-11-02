@@ -25,7 +25,7 @@ class HeaderOfListView extends StatelessWidget {
         ),
         SizedBox(
           height: 20,
-          child: GestureDetector(
+          child: InkResponse(
             onTap: onTap1,
             child: const Center(
               child: Text(
